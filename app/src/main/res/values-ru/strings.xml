@@ -1,0 +1,33 @@
+<resources>
+    <string name="loginEntryHint">Логин</string>
+    <string name="passwordEntryHint">Пароль</string>
+    <string name="proceedArrow">➔</string>
+
+    <string name="balance">Баланс:</string>
+    <string name="defaultBalanceValue">0,00</string>
+    <string name="unauthorizedAlertTitle">Авторизация не пройдена</string>
+    <string name="unauthorizedAlertMessage">Проверьте правильность логина и пароля</string>
+    <string name="option_neutral">Ок</string>
+    <string name="logout">Выход</string>
+    <string name="readQr">Считать QR</string>
+    <string name="enterProfile">Личный кабинет</string>
+    <string name="enterPayment">Оплатить</string>
+	<string name="noCameraDetectedAlertTitle">Нет доступной камеры</string>
+    <string name="noCameraDetectedAlertMessage">Проверьте доступ к камере на вашем устройстве</string>
+    <string name="cameraUnavailableAlertMessage">Проверьте, не используется ли камера другим приложением
+    </string>
+    <string name="cameraUnavailableAlertTitle">Камера недоступна</string>
+	<string name="acceptingQrHeader">Проверьте код запроса</string>
+	<string name="acceptQrButtonText">Подтвердить</string>
+	<string name="sending">Отправляется&#8230;</string>
+	<string name="declineQrButtonText">Отменить</string>
+	<string name="back">Назад</string>
+	<string name="preparing">Готовлю к отправке</string>
+	<string name="showPaymentId">"ID платежа: "</string>
+	<string name="noRecordOnTheServerFound">Такого платежа не существует\nМожет, Вы считали неверный QR?</string>
+	<string name="status">"Статус: "</string>
+	<string name="bonusesLeft">"Бонусов осталось: "</string>
+	<string name="randomBalance">144,50</string>
+    <string name="login">Войти</string>
+    <string name="personalAccount">Личный кабинет</string>
+</resources>

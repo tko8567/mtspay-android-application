@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/defaultContentPadding">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/defaultContentPadding"
+        android:background="@drawable/red_frame">
+
+        <TextView
+            android:id="@+id/menu_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/PresentationalText"
+            android:layout_margin="@dimen/defaultMargin"
+            android:text="Sergey Saprunov"/>
+
+        <TextView
+            android:id="@+id/menu_balance_note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menu_username"
+            android:layout_margin="@dimen/defaultMargin"
+            style="@style/SubText"
+            android:text="@string/balance"/>
+
+        <TextView
+            android:id="@+id/menu_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/menu_username"
+            android:layout_margin="@dimen/defaultMargin"
+            android:layout_toRightOf="@+id/menu_balance_note"
+            android:text="@string/defaultBalanceValue"
+            style="@style/SubText"/>
+
+        <ImageButton
+            android:id="@+id/logout_button"
+            android:layout_width="@dimen/mainMenuButtonSideSize"
+            android:layout_height="@dimen/mainMenuButtonSideSize"
+            android:layout_margin="@dimen/defaultMargin"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/exit"
+            android:scaleType="centerCrop"
+            android:padding="@dimen/defaultIconPadding"
+            android:background="@drawable/red_frame"
+        android:onClick="onLogout"/>
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/defaultContentPadding">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:padding="@dimen/defaultContentPadding"
+                android:id="@+id/personal_account_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_frame"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/defaultLineWidth">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/StandardText"
+                    android:text="@string/personalAccount"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show your account data"
+                    android:layout_marginLeft="@dimen/defaultMargin"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="@dimen/defaultContentPadding"
+                android:id="@+id/read_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_frame"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/defaultLineWidth">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/StandardText"
+                    android:text="Personal account"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show your account data"
+                    android:layout_marginLeft="@dimen/defaultMargin"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="@dimen/defaultContentPadding"
+                android:id="@+id/payments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_frame"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/defaultLineWidth">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/StandardText"
+                    android:text="Personal account"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show your account data"
+                    android:layout_marginLeft="@dimen/defaultMargin"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:padding="@dimen/defaultContentPadding"
+                android:id="@+id/technical_support"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/red_frame"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/defaultLineWidth">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/StandardText"
+                    android:text="Personal account"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show your account data"
+                    android:layout_marginLeft="@dimen/defaultMargin"/>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

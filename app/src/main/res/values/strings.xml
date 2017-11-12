@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name" translatable="false">MTS Pay</string>
+    <string name="loginEntryHint">loginEntry</string>
+    <string name="passwordEntryHint">passwordEntry</string>
+    <string name="proceedArrow">➔</string>
+    <string name="login">login</string>
+
+    <string name="balance">balance</string>
+    <string name="defaultBalanceValue">0.00</string>
+    <string name="randomBalance">144.50</string>
+    <string name="bonusesLeft">bonusesLeft</string>
+    <string name="unauthorizedAlertTitle">unauthorizedAlertTitle</string>
+    <string name="unauthorizedAlertMessage">unauthorizedAlertMessage</string>
+    <string name="option_neutral">option_neutral</string>
+    <string name="readQr">readQr</string>
+    <string name="enterProfile">enterProfile</string>
+    <string name="enterPayment">enterPayment</string>
+    <string name="logout">logout</string>
+    <string name="noCameraDetectedAlertTitle">noCameraDetectedAlertTitle</string>
+    <string name="noCameraDetectedAlertMessage">noCameraDetectedAlertMessage</string>
+    <string name="cameraUnavailableAlertTitle">cameraUnavailableAlertTitle</string>
+    <string name="cameraUnavailableAlertMessage">cameraUnavailableAlertMessage</string>
+    <string name="acceptingQrHeader">acceptingQrHeader</string>
+    <string name="acceptQrButtonText">acceptQrButtonText</string>
+    <string name="declineQrButtonText">declineQrButtonText</string>
+    <string name="preparing">preparing</string>
+    <string name="sending">sending</string>
+    <string name="showPaymentId">showPaymentId</string>
+    <string name="noRecordOnTheServerFound">noRecordOnTheServerFound</string>
+    <string name="status">status</string>
+    <string name="back">back</string>
+    <string name="personalAccount">personalAccount</string>
+</resources>

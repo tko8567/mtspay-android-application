@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+	<EditText android:id="@+id/loginEntry"
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:layout_centerHorizontal="true"
+	          android:layout_above="@+id/passwordEntry"
+	          android:layout_marginTop="2dp"
+	          android:layout_marginBottom="2dp"
+	          android:layout_marginLeft="15dp"
+	          android:layout_marginRight="15dp"
+	          android:padding="7dp"
+	          android:gravity="center"
+	          android:typeface="monospace"
+	          android:inputType="textPersonName"
+              android:background="@drawable/underline"
+	          android:hint="@string/loginEntryHint"
+	          android:imeOptions="actionNext"/>
+
+	<EditText android:id="@+id/passwordEntry"
+	          android:layout_width="match_parent"
+	          android:layout_height="wrap_content"
+	          android:layout_centerHorizontal="true"
+	          android:layout_centerVertical="true"
+	          android:layout_marginTop="2dp"
+	          android:layout_marginBottom="2dp"
+	          android:layout_marginLeft="15dp"
+	          android:layout_marginRight="15dp"
+	          android:padding="7dp"
+	          android:gravity="center"
+	          android:inputType="textPassword"
+              android:background="@drawable/underline"
+	          android:hint="@string/passwordEntryHint"
+	          android:imeOptions="actionDone"/>
+
+    <Button android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/passwordEntry"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/soft_background"
+            android:text="@string/login"
+            android:textColor="@android:color/white"/>
+
+</RelativeLayout>

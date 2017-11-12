@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="inf">65536dp</dimen>
+
+    <dimen name="bigButtonTextSize">40sp</dimen>
+    <dimen name="balanceTextSize">@dimen/defaultMediumTextSize</dimen>
+    <dimen name="mainMenuButtonTextSize">20sp</dimen>
+    <dimen name="mainMenuButtonSideSize">60dp</dimen>
+    <dimen name="mainMenuButtonMargin">15dp</dimen>
+    <dimen name="mainMenuGridMargin">25dp</dimen>
+
+    <dimen name="userIconSize">60dp</dimen>
+
+    <dimen name="editTextCornerRadius">@dimen/inf</dimen>
+    <dimen name="editTextStrokeWidth">6px</dimen>
+
+    <dimen name="defaultMargin">5dp</dimen>
+    <dimen name="defaultContentPadding">5dp</dimen>
+    <dimen name="defaultIconPadding">8dp</dimen>
+    <dimen name="defaultHugeTextSize">40sp</dimen>
+    <dimen name="defaultLargeTextSize">32sp</dimen>
+    <dimen name="defaultMediumTextSize">25sp</dimen>
+    <dimen name="intermediateTextSize">20sp</dimen>
+    <dimen name="defaultSmallTextSize">17sp</dimen>
+    <dimen name="thinLineWidth">2px</dimen>
+    <dimen name="defaultLineWidth">4px</dimen>
+
+</resources>
