@@ -1,5 +1,6 @@
 package com.greentea.mtspayandroidapplication.net.graphql;
 
+import android.telecom.Call;
 import android.util.Log;
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.ApolloClient;
@@ -9,58 +10,64 @@ import com.apollographql.apollo.exception.ApolloException;
 import com.apollographql.apollo.exception.ApolloHttpException;
 import com.apollographql.apollo.exception.ApolloNetworkException;
 import com.greentea.mtspayandroidapplication.FindPersonByIdQuery;
-import com.greentea.mtspayandroidapplication.Launcher;
 import com.greentea.mtspayandroidapplication.net.NetConstants;
 
 import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.greentea.mtspayandroidapplication.net.graphql.Queries.Constants.EXCEPTION;
+import static com.greentea.mtspayandroidapplication.net.graphql.Queries.Constants.PERSON;
+import static com.greentea.mtspayandroidapplication.FindPersonByIdQuery.Person;
+import static com.greentea.mtspayandroidapplication.FindPersonByIdQuery.Data;
+
 public class Queries {
 
+    private static volatile boolean lastQueryPerformed = false;
     private static volatile Map<String, Object> map = new HashMap<>();
     private static ApolloClient apolloClient;
-    private static String endpoint =
-            NetConstants.SERVER_IP + '/' + NetConstants.GRAPHQL_SECTION;
+    private static String endpoint = NetConstants.SERVER_IP + '/' + NetConstants.GRAPHQL_SECTION;
 
     static {
+
         apolloClient = ApolloClient
                 .builder()
+                /*.okHttpClient(new OkHttpClient.Builder().addInterceptor(
+                        new Interceptor() {
+                            @Override
+                            public okhttp3.Response intercept(Chain chain) throws IOException {
+                                return null;
+                            }
+                        }
+                ).build())*/
                 .serverUrl(endpoint)
                 .build();
     }
 
-    public static void loginQuery(String id, final Object lock, final OnQueryPerformedListener listener) {
+    public static void loginQuery(String id, ApolloCall.Callback<Data> callback) {
+        lastQueryPerformed = false;
 
+        //map = new HashMap<>();
+        /*
         ApolloCall.Callback<FindPersonByIdQuery.Data> callback = new ApolloCall.Callback<FindPersonByIdQuery.Data>() {
             @Override
             public void onResponse(@Nonnull Response<FindPersonByIdQuery.Data> response) {
-                if (response.data().person() != null) {
-                    String firstName = response.data().person().firstName();
-                    String lastName = response.data().person().lastName();
-                    map.put(Launcher.PrefConstants.FIRST_NAME, firstName);
-                    map.put(Launcher.PrefConstants.LAST_NAME, lastName);
-                    listener.onFinish(
-                            true,
-                            map
-                    );
-                } else {
-                    map.put(Launcher.PrefConstants.FIRST_NAME, "null");
-                    map.put(Launcher.PrefConstants.LAST_NAME, "null");
-                    listener.onFinish(
-                            false,
-                            map
-                    );
-                }
+                map.put(PERSON, response.data().person());
+                listener.onFinish(
+                        (response.data().person() != null),
+                        map
+                );
+                lastQueryPerformed = true;
             }
 
             @Override
             public void onFailure(@Nonnull ApolloException e) {
-                map.put("exception", e);
+                map.put(EXCEPTION, e);
                 listener.onFinish(
                         false,
                         map
                 );
+                lastQueryPerformed = true;
             }
 
             @Override
@@ -68,6 +75,7 @@ public class Queries {
                 super.onHttpError(e);
                 Log.e("ApolloClient", e.toString());
                 e.printStackTrace();
+                lastQueryPerformed = true;
             }
 
             @Override
@@ -75,6 +83,7 @@ public class Queries {
                 super.onNetworkError(e);
                 Log.e("ApolloClient", e.toString());
                 e.printStackTrace();
+                lastQueryPerformed = true;
             }
 
             @Override
@@ -82,10 +91,9 @@ public class Queries {
                 super.onCanceledError(e);
                 Log.e("ApolloClient", e.toString());
                 e.printStackTrace();
+                lastQueryPerformed = true;
             }
-        };
-
-
+        };*/
 
         apolloClient.query(
                 FindPersonByIdQuery
@@ -95,10 +103,18 @@ public class Queries {
         ).enqueue(callback);
     }
 
+    public static boolean isLastQueryPerformed() {
+        return lastQueryPerformed;
+    }
+
     public interface OnQueryPerformedListener {
         void onFinish(boolean succeeded, Map<String, Object> data);
     }
 
+    public static class Constants {
+        public static final String PERSON = "person";
+        public static final String EXCEPTION = "exception";
+    }
 }
 
 

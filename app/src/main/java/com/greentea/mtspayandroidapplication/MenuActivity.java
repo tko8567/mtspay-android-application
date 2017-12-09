@@ -31,10 +31,25 @@ public class MenuActivity extends AppCompatActivity {
         mLogout = (ImageButton) findViewById(R.id.logout_button);
     }
 
-
     public void onLogout(View v) {
         setResult(LOGOUT);
         finish();
+    }
+
+    public void onPersonalAccountClick(View v) {
+
+    }
+
+    public void onReadQrClick(View v) {
+
+    }
+
+    public void onTransactionsClick(View v) {
+
+    }
+
+    public void onTechnicalSupportClick(View v) {
+
     }
 
     @Override

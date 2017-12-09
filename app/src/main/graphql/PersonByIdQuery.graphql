@@ -1,7 +1,34 @@
-query FindPersonById($id: String) {
+query FindPersonById ($id: String){
   person(id: $id) {
+    id
     firstName
     lastName
-    id
+    cards {
+      id
+      number
+      validThru
+      balance
+      isDefault
+    }
+    transactions {
+      id
+      from {
+        firstName
+        lastName
+      }
+      to {
+		... on Person {
+          firstName
+          lastName
+        }
+        ... on Organization {
+          name
+        }
+      }
+      amount
+      description
+      status
+    }
   }
 }
+

@@ -30,4 +30,14 @@
 	<string name="randomBalance">144,50</string>
     <string name="login">Войти</string>
     <string name="personalAccount">Личный кабинет</string>
+    <string name="networkUnavailableTitle">Нет соединения</string>
+    <string name="networkUnavailableMessage">Проверьте интернет соединение и попробуйте снова</string>
+    <string name="incorrectFieldsTitle">Некорректный ввод</string>
+    <string name="incorrectFieldsMessage">Введите логин и пароль</string>
+    <string name="personalAccountSubtext">Информация об аккаунте</string>
+    <string name="readQrSubtext">Включить камеру для чтения кода</string>
+    <string name="transactions">Переводы</string>
+    <string name="transactionsSubtext">Просмотреть Ваши последние переводы</string>
+    <string name="technicalSupport">Техническая поддержка</string>
+    <string name="technicalSupportSubtext">Обратиться к специалисту</string>
 </resources>

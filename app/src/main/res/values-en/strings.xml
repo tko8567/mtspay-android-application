@@ -29,4 +29,14 @@
 	<string name="randomBalance">144.50</string>
 	<string name="login">Log in</string>
 	<string name="personalAccount">Personal Account</string>
+    <string name="networkUnavailableMessage">Check internet connection and try again</string>
+	<string name="networkUnavailableTitle">No connection</string>
+    <string name="incorrectFieldsTitle">Incorrect entry</string>
+	<string name="incorrectFieldsMessage">Fill both the login and password!</string>
+    <string name="personalAccountSubtext">Show your account data</string>
+	<string name="readQrSubtext">Enable camera to scan the code</string>
+	<string name="transactions">Transactions</string>
+	<string name="transactionsSubtext">Browse your latest transactions</string>
+	<string name="technicalSupport">Technical support</string>
+	<string name="technicalSupportSubtext">Apply for a specialist</string>
 </resources>

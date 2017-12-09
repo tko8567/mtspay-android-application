@@ -30,4 +30,14 @@
     <string name="status">status</string>
     <string name="back">back</string>
     <string name="personalAccount">personalAccount</string>
+    <string name="networkUnavailableTitle">networkUnavailableTitle</string>
+    <string name="networkUnavailableMessage">networkUnavailableMessage</string>
+    <string name="incorrectFieldsTitle">incorrectFieldsTitle</string>
+    <string name="incorrectFieldsMessage">incorrectFieldsMessage</string>
+    <string name="personalAccountSubtext">personalAccountSubtext</string>
+    <string name="readQrSubtext">readQrSubtext</string>
+    <string name="transactions">transactions</string>
+    <string name="transactionsSubtext">transactionsSubtext</string>
+    <string name="technicalSupport">technicalSupport</string>
+    <string name="technicalSupportSubtext">technicalSupportSubtext</string>
 </resources>
