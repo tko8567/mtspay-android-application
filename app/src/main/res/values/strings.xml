@@ -40,4 +40,12 @@
     <string name="transactionsSubtext">transactionsSubtext</string>
     <string name="technicalSupport">technicalSupport</string>
     <string name="technicalSupportSubtext">technicalSupportSubtext</string>
+    <string name="cards">cards</string>
+    <string name="validThru">validThru</string>
+    <string name="moneyFormat">########.##</string>
+    <string name="transaction">transaction</string>
+    <string name="from">from</string>
+    <string name="to">to</string>
+    <string name="amount">amount</string>
+    <string name="description">description</string>
 </resources>

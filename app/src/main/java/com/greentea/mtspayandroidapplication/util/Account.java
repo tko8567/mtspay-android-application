@@ -3,16 +3,18 @@ package com.greentea.mtspayandroidapplication.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+import apollo.FindPersonByIdQuery;
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.api.Response;
 import com.apollographql.apollo.exception.ApolloException;
-import com.greentea.mtspayandroidapplication.FindPersonByIdQuery;
 import com.greentea.mtspayandroidapplication.Launcher;
 import com.greentea.mtspayandroidapplication.net.graphql.SingleApolloClient;
+import type.TransactionStatus;
 
 import javax.annotation.Nonnull;
+import java.util.ArrayList;
 
-import static com.greentea.mtspayandroidapplication.FindPersonByIdQuery.Person;
+import static apollo.FindPersonByIdQuery.*;
 
 public class Account {
 
@@ -39,6 +41,7 @@ public class Account {
     private SharedPreferences sharedPreferences;
     private String token = "null";
     private volatile Person person;
+    private Card defaultCard;
 
     private final Object lock = new Object();
     private volatile int status = STATUS_NA;
@@ -64,12 +67,24 @@ public class Account {
      * Account instance which is not needed to update Context for. Use when you do not need the actual context
      * @return Account instance
      */
+    /*
     public static Account getInstance() {
         if (instance != null) {
             return instance;
         }
         throw new IllegalStateException("Context is not defined for new Account");
+    }*/
+    // FIXME: 19.12.2017 Test section
+    public static Account getInstance() {
+        if (instance == null) {
+            instance = new Account();
+            instance.loadTestAccount();
+        }
+        return instance;
     }
+    private Account() {
+    }
+    // FIXME: 19.12.2017 End test section
 
     private void resetContext(Context context) {
         sharedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
@@ -105,6 +120,9 @@ public class Account {
                     status = STATUS_NO_ACCOUNT_FOUND;
                     Log.w("Account", "onResponse: STATUS_NO_ACCOUNT_FOUND");
                 } else {
+                    person.cards().forEach(
+                            card -> { if (card.isDefault()) defaultCard = card; }
+                    );
                     status = STATUS_OK;
                     Log.i("Account", "onResponse: STATUS_OK");
                 }
@@ -127,10 +145,10 @@ public class Account {
         };
 
         SingleApolloClient.getApolloClient().query(
-            FindPersonByIdQuery
-                .builder()
-                .id(token)
-                .build()
+                FindPersonByIdQuery
+                        .builder()
+                        .id(token)
+                        .build()
         ).enqueue(callback);
 
         synchronized (lock) {
@@ -169,6 +187,11 @@ public class Account {
         return person;
     }
 
+    // TODO: 18.12.2017 Delete on finishing the testing
+    private void setPerson(Person person) {
+        this.person = person;
+    }
+
     /** Saves current token to preferences. Requires updated context.
      * @return boolean value of whether saving was successful
      */
@@ -192,5 +215,436 @@ public class Account {
      */
     public String getToken() {
         return token;
+    }
+
+    public Card getDefaultCard() {
+        if (defaultCard == null) {
+            person.cards().forEach(
+                    card -> {
+                        if (card.isDefault()) {
+                            defaultCard = card;
+                            return;
+                        }
+                    }
+            );
+        }
+        return defaultCard;
+    }
+
+
+    // Delete on release
+    private void loadTestAccount() {
+        Account.getInstance().setPerson(new FindPersonByIdQuery.Person(
+                "Person",
+                "101",
+                "Daniil",
+                "Yurkov",
+                new ArrayList<Card>() {{
+                    add(new Card(
+                            "Card",
+                            "1001",
+                            "0025 9204 2725 0759",
+                            "08/19",
+                            1124.80d,
+                            true
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+                    add(new Card(
+                            "Card",
+                            "1002",
+                            "3538 3426 9476 0034",
+                            "20/22",
+                            76d,
+                            false
+                    ));
+
+
+                }},
+                new ArrayList<>()
+        ));
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "9471824",
+                new From(
+                        "Person",
+                        "102",
+                        "Oleg",
+                        "Pavlinskiy"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "101",
+                                "Daniil",
+                                "Yurkov"),
+                        null
+                 ),
+                556.30,
+                "A test transaction to you, Daniil",
+                TransactionStatus.SUCCESS)
+        );
+
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "9471824",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                556.30,
+                "Giving it back...",
+                TransactionStatus.SUCCESS)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
+        person.transactions().add(new Transaction(
+                "Transaction",
+                "4000",
+                new From(
+                        "Person",
+                        "101",
+                        "Daniil",
+                        "Yurkov"
+
+                ),
+                new To(
+                        "Person",
+                        new AsPerson(
+                                "Person",
+                                "102",
+                                "Oleg",
+                                "Pavlinsky"),
+                        null
+                ),
+                1367534d,
+                "Transactions Filler",
+                TransactionStatus.DRAFT)
+        );
     }
 }

@@ -15,11 +15,8 @@ package com.greentea.mtspayandroidapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
-import com.greentea.mtspayandroidapplication.util.Account;
-import com.greentea.mtspayandroidapplication.util.WindowHelper;
 
 public class Launcher extends Activity {
 
@@ -29,31 +26,10 @@ public class Launcher extends Activity {
     public static final int MENU_ACTIVITY_REQUEST_CODE = 0xf1;
 
 
-    /*
-    @Override
-    public void onCreate(Bundle savedBundleInstance) {
-        super.onCreate(savedBundleInstance);
-
-        /*
-        if (sharedPreferences == null) sharedPreferences = getSharedPreferences(USERDATA_PREFS_NAME, MODE_PRIVATE);
-        token = sharedPreferences.getString(PrefConstants.TOKEN, null);
-        firstName = sharedPreferences.getString(PrefConstants.FIRST_NAME, null);
-        lastName = sharedPreferences.getString(PrefConstants.LAST_NAME, null);
-
-        if (token == null || firstName == null || lastName == null){
-            this.launchAuthentication();
-        } else {
-            launchMenu();
-        }
-
-    }
-    */
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+/*
         if (Account.getInstance(this).isLoggedIn()) {
             int status = Account.getInstance(this).queryPerson();
             Log.e("Launcher", "status=" + status);
@@ -62,22 +38,22 @@ public class Launcher extends Activity {
 
                 case Account.STATUS_OK:
                     Log.d("Launcher", "queryPerson STATUS_OK, "
-                            + Account.getInstance().getPerson().firstName + " "
-                            + Account.getInstance().getPerson().lastName);
+                            + Account.getInstance().getPerson().firstName() + " "
+                            + Account.getInstance().getPerson().lastName());
                     launchMenu();
                     break;
 
                 case Account.STATUS_RECOVERED:
                     Log.d("Launcher", "queryPerson STATUS_RECOVERED, "
-                            + Account.getInstance().getPerson().firstName + " "
-                            + Account.getInstance().getPerson().lastName);
+                            + Account.getInstance().getPerson().firstName() + " "
+                            + Account.getInstance().getPerson().lastName());
                     launchMenu();
                     break;
 
                 case Account.STATUS_APOLLO_EXCEPTION:
                     Log.d("Launcher", "queryPerson STATUS_APOLLO_EXCEPTION, "
                             + Account.getInstance().getException());
-                    WindowHelper.showExceptionAlertDialog(Account.getInstance().getException(), this);
+                    AppHelper.showExceptionAlertDialog(Account.getInstance().getException(), this);
                     break;
 
                 case Account.STATUS_NO_ACCOUNT_FOUND:
@@ -90,6 +66,8 @@ public class Launcher extends Activity {
             }
         } else launchAuthentication();
         Log.wtf("Launcher", "onCreate was finished!?");
+        */
+launchMenu();
     }
 
     @Override

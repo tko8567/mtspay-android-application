@@ -13,11 +13,13 @@ query FindPersonById ($id: String){
     transactions {
       id
       from {
+        id
         firstName
         lastName
       }
       to {
 		... on Person {
+		  id
           firstName
           lastName
         }

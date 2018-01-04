@@ -1,7 +1,6 @@
 package com.greentea.mtspayandroidapplication;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -11,14 +10,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import com.greentea.mtspayandroidapplication.net.graphql.Queries;
 import com.greentea.mtspayandroidapplication.util.Account;
 
-import java.util.Map;
-
-import static com.greentea.mtspayandroidapplication.FindPersonByIdQuery.Person;
-
 public class AuthenticationActivity extends AppCompatActivity {
+
+    protected static int WTF = 0x0;
+
 
     public static final int RESULT_LOGGED_IN = 0x10;
     public static final int RESULT_LOG_IN_FAILED = 0x11;
@@ -38,7 +35,7 @@ public class AuthenticationActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.authentication_activity);
+        setContentView(R.layout.activity_authentication);
 
         mLoginEntry = (EditText) findViewById(R.id.loginEntry);
         mPasswordEntry = (EditText) findViewById(R.id.passwordEntry);
@@ -74,8 +71,8 @@ public class AuthenticationActivity extends AppCompatActivity {
 
                         case Account.STATUS_OK:
                             Log.d("AuthenticationActivity", "queryPerson STATUS_OK, "
-                                    + Account.getInstance().getPerson().firstName + " "
-                                    + Account.getInstance().getPerson().lastName);
+                                    + Account.getInstance().getPerson().firstName() + " "
+                                    + Account.getInstance().getPerson().lastName());
                             Account.getInstance().saveToken();
                             setResult(RESULT_LOGGED_IN);
                             finish();
@@ -84,9 +81,9 @@ public class AuthenticationActivity extends AppCompatActivity {
                         case Account.STATUS_RECOVERED:
                             Log.wtf("AuthenticationActivity", "queryPerson RECOVERED ACCOUNT IN AuthenticationActivity!");
                             Log.d("AuthenticationActivity", "Account info: "
-                                    + "firstName=" + Account.getInstance().getPerson().firstName + ", "
-                                    + "lastName=" + Account.getInstance().getPerson().lastName + ", "
-                                    + "id/token=" + Account.getInstance().getPerson().id);
+                                    + "firstName=" + Account.getInstance().getPerson().firstName() + ", "
+                                    + "lastName=" + Account.getInstance().getPerson().lastName() + ", "
+                                    + "id/token=" + Account.getInstance().getPerson().id());
                             setResult(RESULT_LOGGED_IN);
                             finish();
                             break;

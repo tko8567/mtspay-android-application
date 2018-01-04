@@ -1,25 +1,14 @@
 package com.greentea.mtspayandroidapplication.net.graphql;
 
-import android.telecom.Call;
-import android.util.Log;
+import apollo.FindPersonByIdQuery;
 import com.apollographql.apollo.ApolloCall;
 import com.apollographql.apollo.ApolloClient;
-import com.apollographql.apollo.api.Response;
-import com.apollographql.apollo.exception.ApolloCanceledException;
-import com.apollographql.apollo.exception.ApolloException;
-import com.apollographql.apollo.exception.ApolloHttpException;
-import com.apollographql.apollo.exception.ApolloNetworkException;
-import com.greentea.mtspayandroidapplication.FindPersonByIdQuery;
 import com.greentea.mtspayandroidapplication.net.NetConstants;
 
-import javax.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 
-import static com.greentea.mtspayandroidapplication.net.graphql.Queries.Constants.EXCEPTION;
-import static com.greentea.mtspayandroidapplication.net.graphql.Queries.Constants.PERSON;
-import static com.greentea.mtspayandroidapplication.FindPersonByIdQuery.Person;
-import static com.greentea.mtspayandroidapplication.FindPersonByIdQuery.Data;
+import static apollo.FindPersonByIdQuery.Data;
 
 public class Queries {
 
@@ -49,9 +38,9 @@ public class Queries {
 
         //map = new HashMap<>();
         /*
-        ApolloCall.Callback<FindPersonByIdQuery.Data> callback = new ApolloCall.Callback<FindPersonByIdQuery.Data>() {
+        ApolloCall.Callback<src.FindPersonByIdQuery.Data> callback = new ApolloCall.Callback<src.FindPersonByIdQuery.Data>() {
             @Override
-            public void onResponse(@Nonnull Response<FindPersonByIdQuery.Data> response) {
+            public void onResponse(@Nonnull Response<src.FindPersonByIdQuery.Data> response) {
                 map.put(PERSON, response.data().person());
                 listener.onFinish(
                         (response.data().person() != null),

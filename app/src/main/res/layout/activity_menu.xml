@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="@dimen/defaultContentPadding">
+    android:padding="@dimen/defaultContentPadding"
+    tools:context=".MenuActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -17,8 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             style="@style/PresentationalText"
-            android:layout_margin="@dimen/defaultMargin"
-            android:text="Sergey Saprunov"/>
+            android:layout_margin="@dimen/defaultMargin"/>
 
         <TextView
             android:id="@+id/menu_balance_note"
@@ -143,7 +143,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/red_frame"
                 android:orientation="vertical"
-                android:layout_margin="@dimen/defaultLineWidth">
+                android:layout_margin="@dimen/defaultLineWidth"
+                android:onClick="onTechnicalSupportClick">
 
                 <TextView
                     android:layout_width="match_parent"

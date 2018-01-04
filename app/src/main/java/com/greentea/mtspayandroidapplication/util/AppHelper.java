@@ -3,7 +3,7 @@ package com.greentea.mtspayandroidapplication.util;
 import android.app.AlertDialog;
 import android.content.Context;
 
-public class WindowHelper {
+public class AppHelper {
 
     public static void showExceptionAlertDialog(Exception e, Context context) {
         AlertDialog exceptionDialog = new AlertDialog.Builder(context)
@@ -11,5 +11,7 @@ public class WindowHelper {
                 .setMessage("Message: " + e.getMessage())
                 .show();
     }
+
+
 
 }
