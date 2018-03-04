@@ -17,7 +17,6 @@
               android:gravity="center"
               android:typeface="monospace"
               android:inputType="textPersonName"
-              android:background="@drawable/underline"
               android:hint="@string/loginEntryHint"
               android:imeOptions="actionNext"/>
 
@@ -33,7 +32,6 @@
               android:padding="7dp"
               android:gravity="center"
               android:inputType="textPassword"
-              android:background="@drawable/underline"
               android:hint="@string/passwordEntryHint"
               android:imeOptions="actionDone"/>
 

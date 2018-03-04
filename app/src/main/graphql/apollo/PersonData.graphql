@@ -1,0 +1,49 @@
+fragment personData on Person{
+
+    id
+    email
+    firstName
+    lastName
+    defaultWallet {
+        id
+        name
+        isDeleted
+    }
+    wallets {
+        id
+        name
+        isDeleted
+    }
+    transactions {
+        id
+        fromMember {
+            ... on Person {
+                id
+                firstName
+                lastName
+            }
+            ... on Organization {
+                id
+                name
+            }
+        }
+        fromWallet {
+            name
+        }
+        toMember {
+            ... on Person {
+                id
+                firstName
+                lastName
+            }
+            ... on Organization {
+                id
+                name
+            }
+        }
+        toWallet {
+            name
+        }
+    }
+}
+

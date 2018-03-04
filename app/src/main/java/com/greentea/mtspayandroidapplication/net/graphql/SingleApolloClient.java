@@ -2,6 +2,9 @@ package com.greentea.mtspayandroidapplication.net.graphql;
 
 import com.apollographql.apollo.ApolloClient;
 import com.greentea.mtspayandroidapplication.net.NetConstants;
+import com.greentea.mtspayandroidapplication.util.apollo.SnowflakeTypeAdapter;
+
+import type.CustomType;
 
 public class SingleApolloClient {
 
@@ -11,6 +14,7 @@ public class SingleApolloClient {
     static {
         apolloClient = ApolloClient.builder()
                 .serverUrl(endpoint)
+                .addCustomTypeAdapter(CustomType.SNOWFLAKE, new SnowflakeTypeAdapter())
                 .build();
     }
 

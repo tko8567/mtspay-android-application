@@ -1,2100 +1,2102 @@
 {
   "data": {
     "__schema": {
-      "queryType": {
-        "name": "Query"
-      },
-      "mutationType": {
-        "name": "Mutation"
-      },
-      "subscriptionType": null,
       "types": [
         {
-          "kind": "OBJECT",
-          "name": "Query",
-          "description": null,
-          "fields": [
-            {
-              "name": "person",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Person",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "persons",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Person",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "organization",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Organization",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "organizations",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Organization",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transaction",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Transaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transactions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Transaction",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "Person",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "firstName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "lastName",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "card",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Card",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "cards",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Card",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transactions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Transaction",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "registeredAt",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "DateTime",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "String",
-          "description": "The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text.",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "Card",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "holder",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Person",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "number",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "validThru",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Date",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "balance",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Float",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isDefault",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "Date",
-          "description": "The `Date` scalar",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "Float",
-          "description": "The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](http://en.wikipedia.org/wiki/IEEE_floating_point). ",
-          "fields": null,
-          "inputFields": null,
-          "interfaces": null,
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
+          "possibleTypes": null,
           "name": "Boolean",
-          "description": "The `Boolean` scalar type represents `true` or `false`.",
-          "fields": null,
-          "inputFields": null,
+          "kind": "SCALAR",
           "interfaces": null,
+          "inputFields": null,
+          "fields": null,
           "enumValues": null,
-          "possibleTypes": null
+          "description": "The `Boolean` scalar type represents `true` or `false`."
         },
         {
+          "possibleTypes": null,
+          "name": "DateTime",
+          "kind": "SCALAR",
+          "interfaces": null,
+          "inputFields": null,
+          "fields": null,
+          "enumValues": null,
+          "description": "The `DateTime` scalar type represents a date and time in the UTC\ntimezone. The DateTime appears in a JSON response as an ISO8601 formatted\nstring, including UTC timezone (\"Z\"). The parsed date and time string will\nbe converted to UTC and any UTC offset other than 0 will be rejected.\n"
+        },
+        {
+          "possibleTypes": null,
+          "name": "Money",
+          "kind": "SCALAR",
+          "interfaces": null,
+          "inputFields": null,
+          "fields": null,
+          "enumValues": null,
+          "description": "The `Money` scalar type represents a type for money numbers.\n"
+        },
+        {
+          "possibleTypes": null,
+          "name": "RootMutationType",
           "kind": "OBJECT",
-          "name": "Transaction",
-          "description": null,
+          "interfaces": [],
+          "inputFields": null,
           "fields": [
             {
-              "name": "id",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "ofType": null,
+                "name": "Transaction",
+                "kind": "OBJECT"
               },
+              "name": "approveTransaction",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Approve the transaction.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Transaction's Snowflake ID to approve.",
+                  "defaultValue": null
+                }
+              ]
             },
             {
-              "name": "from",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "OBJECT",
+                "ofType": null,
+                "name": "Transaction",
+                "kind": "OBJECT"
+              },
+              "name": "cancelTransaction",
+              "isDeprecated": false,
+              "description": "Cancel the transaction.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Transaction's Snowflake ID to cancel.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Organization",
+                "kind": "OBJECT"
+              },
+              "name": "createOrganization",
+              "isDeprecated": false,
+              "description": "Create an ogranization.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "name",
+                  "description": "Organization's name.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
                 "name": "Person",
-                "ofType": null
+                "kind": "OBJECT"
               },
+              "name": "createPerson",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Sign up a person.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "email",
+                  "description": "Person's email.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "firstName",
+                  "description": "Person's first name.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "lastName",
+                  "description": "Person's last name",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "password",
+                  "description": "Person's password.",
+                  "defaultValue": null
+                }
+              ]
             },
             {
-              "name": "to",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "UNION",
-                "name": "TransactionMember",
-                "ofType": null
+                "ofType": null,
+                "name": "Transaction",
+                "kind": "OBJECT"
               },
+              "name": "createTransaction",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Create a transaction.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Money",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "amount",
+                  "description": "Transaction amount.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "description",
+                  "description": "Transaction comment.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "fromMemberId",
+                  "description": "Member w/ a source money transfer.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Snowflake",
+                    "kind": "SCALAR"
+                  },
+                  "name": "fromWalletId",
+                  "description": "Source money transfer wallet.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "toMemberId",
+                  "description": "Member w/ a destination money transfer.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Snowflake",
+                    "kind": "SCALAR"
+                  },
+                  "name": "toWalletId",
+                  "description": "Destination money transfer wallet.",
+                  "defaultValue": null
+                }
+              ]
             },
             {
-              "name": "amount",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "Float",
-                "ofType": null
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
               },
+              "name": "createWallet",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Create a wallet.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "name",
+                  "description": "Wallet's name.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "ownerId",
+                  "description": "Wallet owner's Snowflake ID.",
+                  "defaultValue": null
+                }
+              ]
             },
             {
-              "name": "description",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
               },
+              "name": "deleteWallet",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Delete the wallet.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Wallet's Snowflake ID to delete.",
+                  "defaultValue": null
+                }
+              ]
             },
             {
-              "name": "timestamp",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "DateTime",
-                "ofType": null
+                "ofType": null,
+                "name": "Session",
+                "kind": "OBJECT"
               },
+              "name": "login",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Log in.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "email",
+                  "description": "Person's email.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "String",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "password",
+                  "description": "Person's password.",
+                  "defaultValue": null
+                }
+              ]
             },
             {
-              "name": "status",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "ENUM",
-                "name": "TransactionStatus",
-                "ofType": null
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
               },
+              "name": "setDefaultWallet",
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Set the wallet as a default wallet for the owner.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Wallet's Snowflake ID to set as a default wallet.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Organization",
+                "kind": "OBJECT"
+              },
+              "name": "updateOrganization",
+              "isDeprecated": false,
+              "description": "Update the ogranization.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Organization's Snowflake ID to update.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Boolean",
+                    "kind": "SCALAR"
+                  },
+                  "name": "isSuspended",
+                  "description": "A flag indicating the organization's account is suspended.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "name",
+                  "description": "Organization's name.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Person",
+                "kind": "OBJECT"
+              },
+              "name": "updatePerson",
+              "isDeprecated": false,
+              "description": "Update the person.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "email",
+                  "description": "Person's email.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "firstName",
+                  "description": "Person's first name.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Person's Snowflake ID to update.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Boolean",
+                    "kind": "SCALAR"
+                  },
+                  "name": "isSuspended",
+                  "description": "A flag indicating the person's account is suspended.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "lastName",
+                  "description": "Person's last name",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "password",
+                  "description": "Person's password.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Transaction",
+                "kind": "OBJECT"
+              },
+              "name": "updateTransaction",
+              "isDeprecated": false,
+              "description": "Update the transaction.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "description",
+                  "description": "Transaction comment.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Snowflake",
+                    "kind": "SCALAR"
+                  },
+                  "name": "fromWalletId",
+                  "description": "Source money transfer wallet.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Transaction's Snowflake ID to update.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Snowflake",
+                    "kind": "SCALAR"
+                  },
+                  "name": "toWalletId",
+                  "description": "Destination money transfer wallet.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
+              },
+              "name": "updateWallet",
+              "isDeprecated": false,
+              "description": "Update the wallet.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Wallet's Snowflake ID to update.",
+                  "defaultValue": null
+                },
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "String",
+                    "kind": "SCALAR"
+                  },
+                  "name": "name",
+                  "description": "Wallet's name.",
+                  "defaultValue": null
+                }
+              ]
             }
           ],
-          "inputFields": null,
-          "interfaces": [],
           "enumValues": null,
-          "possibleTypes": null
+          "description": null
         },
         {
-          "kind": "UNION",
-          "name": "TransactionMember",
-          "description": null,
-          "fields": null,
+          "possibleTypes": null,
+          "name": "Organization",
+          "kind": "OBJECT",
+          "interfaces": [],
           "inputFields": null,
-          "interfaces": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
+              },
+              "name": "defaultWallet",
+              "isDeprecated": false,
+              "description": "Organization's default wallet.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Snowflake",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "id",
+              "isDeprecated": false,
+              "description": "Snowflake ID of the organization.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "isSuspended",
+              "isDeprecated": false,
+              "description": "A flag indicating the organization's account is suspended.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "String",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "name",
+              "isDeprecated": false,
+              "description": "Organization's name.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "DateTime",
+                "kind": "SCALAR"
+              },
+              "name": "registeredAt",
+              "isDeprecated": false,
+              "description": "Date and time when organization's account was created.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Transaction",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "transactions",
+              "isDeprecated": false,
+              "description": "Organization's transactions.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Wallet",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "wallets",
+              "isDeprecated": false,
+              "description": "Organization's wallets.",
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
           "enumValues": null,
+          "description": "Organization's account.\n"
+        },
+        {
+          "possibleTypes": null,
+          "name": "Person",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
+              },
+              "name": "defaultWallet",
+              "isDeprecated": false,
+              "description": "Person's default wallet.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "email",
+              "isDeprecated": false,
+              "description": "Person's email.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "String",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "firstName",
+              "isDeprecated": false,
+              "description": "Person's first name.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Snowflake",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "id",
+              "isDeprecated": false,
+              "description": "Snowflake ID of the person.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "isSuspended",
+              "isDeprecated": false,
+              "description": "A flag indicating the person's account is suspended.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "String",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "lastName",
+              "isDeprecated": false,
+              "description": "Person's last name.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "DateTime",
+                "kind": "SCALAR"
+              },
+              "name": "registeredAt",
+              "isDeprecated": false,
+              "description": "Date and time when person's account was created.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Transaction",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "transactions",
+              "isDeprecated": false,
+              "description": "Person's transactions.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Wallet",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "wallets",
+              "isDeprecated": false,
+              "description": "Person's wallets.",
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": "A person is an individual's account.\n"
+        },
+        {
+          "possibleTypes": null,
+          "name": "RootQueryType",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": null,
+                "name": "Organization",
+                "kind": "OBJECT"
+              },
+              "name": "organization",
+              "isDeprecated": false,
+              "description": "Get an organization by it's Snowflake ID.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Organization's Snowflake ID.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Organization",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "organizations",
+              "isDeprecated": false,
+              "description": "List organizations (dev).",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Person",
+                "kind": "OBJECT"
+              },
+              "name": "person",
+              "isDeprecated": false,
+              "description": "Get a person by it's Snowflake ID.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Person's Snowflake ID.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Person",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "persons",
+              "isDeprecated": false,
+              "description": "List persons (dev).",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Transaction",
+                "kind": "OBJECT"
+              },
+              "name": "transaction",
+              "isDeprecated": false,
+              "description": "Get a transaction by it's Snowflake ID.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Transaction's Snowflake ID.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Transaction",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "transactions",
+              "isDeprecated": false,
+              "description": "List transactions (dev).",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
+              },
+              "name": "wallet",
+              "isDeprecated": false,
+              "description": "Get a wallet by it's Snowflake ID.",
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": {
+                      "ofType": null,
+                      "name": "Snowflake",
+                      "kind": "SCALAR"
+                    },
+                    "name": null,
+                    "kind": "NON_NULL"
+                  },
+                  "name": "id",
+                  "description": "Wallet's Snowflake ID.",
+                  "defaultValue": null
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Wallet",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "wallets",
+              "isDeprecated": false,
+              "description": "List wallets (dev).",
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": null
+        },
+        {
+          "possibleTypes": null,
+          "name": "Session",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "String",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "jwt",
+              "isDeprecated": false,
+              "description": "Session's JWT",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Person",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "person",
+              "isDeprecated": false,
+              "description": "Session owner",
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": "Session's object.\n"
+        },
+        {
+          "possibleTypes": null,
+          "name": "Snowflake",
+          "kind": "SCALAR",
+          "interfaces": null,
+          "inputFields": null,
+          "fields": null,
+          "enumValues": null,
+          "description": "The `Snowflake` scalar type represents a unique object's ID called\nSnowflake ID. Snowflake ID is a 64 bit integer. Note that the\nSnowflake ID values are returned as strings.\n"
+        },
+        {
+          "possibleTypes": null,
+          "name": "String",
+          "kind": "SCALAR",
+          "interfaces": null,
+          "inputFields": null,
+          "fields": null,
+          "enumValues": null,
+          "description": "The `String` scalar type represents textual data, represented as UTF-8\ncharacter sequences. The String type is most often used by GraphQL to\nrepresent free-form human-readable text."
+        },
+        {
+          "possibleTypes": null,
+          "name": "Transaction",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Money",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "amount",
+              "isDeprecated": false,
+              "description": "Transaction amount.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "description",
+              "isDeprecated": false,
+              "description": "Transaction comment.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "TransactionMember",
+                  "kind": "UNION"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "fromMember",
+              "isDeprecated": false,
+              "description": "Member w/ a source money transfer.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
+              },
+              "name": "fromWallet",
+              "isDeprecated": false,
+              "description": "Source money transfer wallet.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Snowflake",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "id",
+              "isDeprecated": false,
+              "description": "Snowflake ID of the transaction.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "TransactionStatus",
+                "kind": "ENUM"
+              },
+              "name": "status",
+              "isDeprecated": false,
+              "description": "Transaction status.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "DateTime",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "timestamp",
+              "isDeprecated": false,
+              "description": "Date and time when transaction was created.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "TransactionMember",
+                  "kind": "UNION"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "toMember",
+              "isDeprecated": false,
+              "description": "Member w/ a destination money transfer.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Wallet",
+                "kind": "OBJECT"
+              },
+              "name": "toWallet",
+              "isDeprecated": false,
+              "description": "Destination money transfer wallet.",
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": "Transaction represents a money transfer between two members (person or organization).\n"
+        },
+        {
           "possibleTypes": [
             {
-              "kind": "OBJECT",
-              "name": "Person",
-              "ofType": null
-            },
-            {
-              "kind": "OBJECT",
+              "ofType": null,
               "name": "Organization",
-              "ofType": null
-            }
-          ]
-        },
-        {
-          "kind": "OBJECT",
-          "name": "Organization",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "kind": "OBJECT"
             },
             {
-              "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "bankAccount",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "BankAccount",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "bankAccounts",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "BankAccount",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transactions",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "Transaction",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "registeredAt",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "DateTime",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "ofType": null,
+              "name": "Person",
+              "kind": "OBJECT"
             }
           ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "BankAccount",
-          "description": null,
-          "fields": [
-            {
-              "name": "id",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "organization",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Organization",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "balance",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Float",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isDefault",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "SCALAR",
-          "name": "DateTime",
-          "description": "The `DateTime` scalar",
-          "fields": null,
-          "inputFields": null,
+          "name": "TransactionMember",
+          "kind": "UNION",
           "interfaces": null,
+          "inputFields": null,
+          "fields": null,
           "enumValues": null,
-          "possibleTypes": null
+          "description": "A transaction member."
         },
         {
-          "kind": "ENUM",
+          "possibleTypes": null,
           "name": "TransactionStatus",
-          "description": null,
-          "fields": null,
-          "inputFields": null,
+          "kind": "ENUM",
           "interfaces": null,
+          "inputFields": null,
+          "fields": null,
           "enumValues": [
             {
-              "name": "DRAFT",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "PROGRESS",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "SUCCESS",
-              "description": null,
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "CANCELLED",
-              "description": null,
               "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null
+            },
+            {
+              "name": "DRAFT",
+              "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
               "name": "FAILED",
-              "description": null,
               "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null
+            },
+            {
+              "name": "PROGRESS",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null
+            },
+            {
+              "name": "SUCCESS",
+              "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             }
           ],
-          "possibleTypes": null
+          "description": null
         },
         {
+          "possibleTypes": null,
+          "name": "Wallet",
           "kind": "OBJECT",
-          "name": "Mutation",
-          "description": null,
-          "fields": [
-            {
-              "name": "createPerson",
-              "description": null,
-              "args": [
-                {
-                  "name": "firstName",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "lastName",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CreatePerson",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "createOrganization",
-              "description": null,
-              "args": [
-                {
-                  "name": "name",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CreateOrganization",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "createCard",
-              "description": null,
-              "args": [
-                {
-                  "name": "holder",
-                  "description": "Cardholder Person ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "number",
-                  "description": "Card number",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "validThru",
-                  "description": "Card valid thru date",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Date",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "isDefault",
-                  "description": "Is make this card default",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Boolean",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CreateCard",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "createBankAccount",
-              "description": null,
-              "args": [
-                {
-                  "name": "organization",
-                  "description": "Bank account's organization ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "isDefault",
-                  "description": "Is make this bank account default",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Boolean",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CreateBankAccount",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "createTransaction",
-              "description": null,
-              "args": [
-                {
-                  "name": "from",
-                  "description": "From person ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "to",
-                  "description": "To member ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "amount",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Float",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "description",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": "\"\""
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CreateTransaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "approveTransaction",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": "Transaction ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                },
-                {
-                  "name": "card",
-                  "description": "Payment card ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": "\"-1\""
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "ApproveTransaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "cancelTransaction",
-              "description": null,
-              "args": [
-                {
-                  "name": "id",
-                  "description": "Transaction ID",
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "String",
-                    "ofType": null
-                  },
-                  "defaultValue": null
-                }
-              ],
-              "type": {
-                "kind": "OBJECT",
-                "name": "CancelTransaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
           "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "CreatePerson",
-          "description": null,
-          "fields": [
-            {
-              "name": "ok",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "person",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Person",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
           "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "CreateOrganization",
-          "description": null,
           "fields": [
             {
-              "name": "ok",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "organization",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Organization",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "CreateCard",
-          "description": null,
-          "fields": [
-            {
-              "name": "ok",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "card",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Card",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "CreateBankAccount",
-          "description": null,
-          "fields": [
-            {
-              "name": "ok",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "bankAccount",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "BankAccount",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "CreateTransaction",
-          "description": null,
-          "fields": [
-            {
-              "name": "ok",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transaction",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Transaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "ApproveTransaction",
-          "description": null,
-          "fields": [
-            {
-              "name": "ok",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transaction",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Transaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "CancelTransaction",
-          "description": null,
-          "fields": [
-            {
-              "name": "ok",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "transaction",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "Transaction",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "__Schema",
-          "description": "A GraphQL Schema defines the capabilities of a GraphQL server. It exposes all available types and directives on the server, as well as the entry points for query, mutation and subscription operations.",
-          "fields": [
-            {
-              "name": "types",
-              "description": "A list of all types supported by this server.",
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
                 "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "__Type",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "queryType",
-              "description": "The type that query operations will be rooted at.",
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
+                  "ofType": null,
+                  "name": "DateTime",
+                  "kind": "SCALAR"
+                },
                 "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "createdAt",
+              "isDeprecated": false,
+              "description": "Date and time when wallet was created.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
                 "ofType": {
-                  "kind": "OBJECT",
-                  "name": "__Type",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "mutationType",
-              "description": "If this server supports mutation, the type that mutation operations will be rooted at.",
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "__Type",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "subscriptionType",
-              "description": "If this server support subscription, the type that subscription operations will be rooted at.",
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "__Type",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "directives",
-              "description": "A list of all directives supported by this server.",
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
+                  "ofType": null,
+                  "name": "Snowflake",
+                  "kind": "SCALAR"
+                },
                 "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "__Directive",
-                      "ofType": null
-                    }
-                  }
-                }
+                "kind": "NON_NULL"
               },
+              "name": "id",
               "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "__Type",
-          "description": "The fundamental unit of any GraphQL Schema is the type. There are many kinds of types in GraphQL as represented by the `__TypeKind` enum.\n\nDepending on the kind of a type, certain fields describe information about that type. Scalar types provide no information beyond a name and description, while Enum types provide their values. Object and Interface types provide the fields they describe. Abstract types, Union and Interface, provide the Object types possible at runtime. List and NonNull types compose other types.",
-          "fields": [
-            {
-              "name": "kind",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "ENUM",
-                  "name": "__TypeKind",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Snowflake ID of the wallet.",
+              "deprecationReason": null,
+              "args": []
             },
             {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Boolean",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
+              "name": "isDeleted",
+              "isDeprecated": false,
+              "description": "A flag indicating the wallet is deleted.",
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "String",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
               "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
               "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Wallet name.",
+              "deprecationReason": null,
+              "args": []
             },
             {
-              "name": "description",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "fields",
-              "description": null,
-              "args": [
-                {
-                  "name": "includeDeprecated",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Boolean",
-                    "ofType": null
-                  },
-                  "defaultValue": "false"
-                }
-              ],
-              "type": {
-                "kind": "LIST",
-                "name": null,
                 "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "__Field",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "interfaces",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
+                  "ofType": null,
+                  "name": "WalletOwner",
+                  "kind": "UNION"
+                },
                 "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "__Type",
-                    "ofType": null
-                  }
-                }
+                "kind": "NON_NULL"
               },
+              "name": "owner",
               "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "possibleTypes",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "__Type",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "enumValues",
-              "description": null,
-              "args": [
-                {
-                  "name": "includeDeprecated",
-                  "description": null,
-                  "type": {
-                    "kind": "SCALAR",
-                    "name": "Boolean",
-                    "ofType": null
-                  },
-                  "defaultValue": "false"
-                }
-              ],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "__EnumValue",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "inputFields",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "LIST",
-                "name": null,
-                "ofType": {
-                  "kind": "NON_NULL",
-                  "name": null,
-                  "ofType": {
-                    "kind": "OBJECT",
-                    "name": "__InputValue",
-                    "ofType": null
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ofType",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "OBJECT",
-                "name": "__Type",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
+              "description": "Wallet owner.",
+              "deprecationReason": null,
+              "args": []
             }
           ],
-          "inputFields": null,
-          "interfaces": [],
           "enumValues": null,
-          "possibleTypes": null
+          "description": "Wallet represents a credit/debit card or bank account.\n"
         },
         {
-          "kind": "ENUM",
-          "name": "__TypeKind",
-          "description": "An enum describing what kind of type a given `__Type` is",
-          "fields": null,
-          "inputFields": null,
+          "possibleTypes": [
+            {
+              "ofType": null,
+              "name": "Organization",
+              "kind": "OBJECT"
+            },
+            {
+              "ofType": null,
+              "name": "Person",
+              "kind": "OBJECT"
+            }
+          ],
+          "name": "WalletOwner",
+          "kind": "UNION",
           "interfaces": null,
-          "enumValues": [
-            {
-              "name": "SCALAR",
-              "description": "Indicates this type is a scalar.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "OBJECT",
-              "description": "Indicates this type is an object. `fields` and `interfaces` are valid fields.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "INTERFACE",
-              "description": "Indicates this type is an interface. `fields` and `possibleTypes` are valid fields.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "UNION",
-              "description": "Indicates this type is a union. `possibleTypes` is a valid field.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ENUM",
-              "description": "Indicates this type is an enum. `enumValues` is a valid field.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "INPUT_OBJECT",
-              "description": "Indicates this type is an input object. `inputFields` is a valid field.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "LIST",
-              "description": "Indicates this type is a list. `ofType` is a valid field.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "NON_NULL",
-              "description": "Indicates this type is a non-null. `ofType` is a valid field.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "__Field",
-          "description": "Object and Interface types are described by a list of Fields, each of which has a name, potentially a list of arguments, and a return type.",
-          "fields": [
-            {
-              "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "description",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "args",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "__InputValue",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "type",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "__Type",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isDeprecated",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deprecationReason",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
           "inputFields": null,
-          "interfaces": [],
+          "fields": null,
           "enumValues": null,
-          "possibleTypes": null
+          "description": "A wallet owner."
         },
         {
-          "kind": "OBJECT",
-          "name": "__InputValue",
-          "description": "Arguments provided to Fields or Directives and the input fields of an InputObject are represented as Input Values which describe their type and optionally a default value.",
-          "fields": [
-            {
-              "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "description",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "type",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "OBJECT",
-                  "name": "__Type",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "defaultValue",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
-          "name": "__EnumValue",
-          "description": "One possible value for a given Enum. Enum values are unique values, not a placeholder for a string or numeric value. However an Enum value is returned in a JSON response as a string.",
-          "fields": [
-            {
-              "name": "name",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "description",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "isDeprecated",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "deprecationReason",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            }
-          ],
-          "inputFields": null,
-          "interfaces": [],
-          "enumValues": null,
-          "possibleTypes": null
-        },
-        {
-          "kind": "OBJECT",
+          "possibleTypes": null,
           "name": "__Directive",
-          "description": "A Directive provides a way to describe alternate runtime execution and type validation behavior in a GraphQL document.\n\nIn some cases, you need to provide options to alter GraphQL's execution behavior in ways field arguments will not suffice, such as conditionally including or skipping a field. Directives provide this by describing additional information to the executor.",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
           "fields": [
             {
-              "name": "name",
-              "description": null,
-              "args": [],
               "type": {
-                "kind": "NON_NULL",
-                "name": null,
                 "ofType": {
-                  "kind": "SCALAR",
-                  "name": "String",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "description",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "SCALAR",
-                "name": "String",
-                "ofType": null
-              },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "locations",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
+                  "ofType": null,
+                  "name": "__InputValue",
+                  "kind": "OBJECT"
+                },
                 "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "ENUM",
-                      "name": "__DirectiveLocation",
-                      "ofType": null
-                    }
-                  }
-                }
+                "kind": "LIST"
               },
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
               "name": "args",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "LIST",
-                  "name": null,
-                  "ofType": {
-                    "kind": "NON_NULL",
-                    "name": null,
-                    "ofType": {
-                      "kind": "OBJECT",
-                      "name": "__InputValue",
-                      "ofType": null
-                    }
-                  }
-                }
-              },
               "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "onOperation",
               "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": true,
-              "deprecationReason": "Use `locations`."
+              "deprecationReason": null,
+              "args": []
             },
             {
-              "name": "onFragment",
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "description",
+              "isDeprecated": false,
               "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
-              "isDeprecated": true,
-              "deprecationReason": "Use `locations`."
+              "deprecationReason": null,
+              "args": []
             },
             {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__DirectiveLocation",
+                  "kind": "ENUM"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "locations",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "name",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
               "name": "onField",
-              "description": null,
-              "args": [],
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
               "isDeprecated": true,
-              "deprecationReason": "Use `locations`."
+              "description": null,
+              "deprecationReason": "Check `locations` field for enum value FIELD",
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "onFragment",
+              "isDeprecated": true,
+              "description": null,
+              "deprecationReason": "Check `locations` field for enum value FRAGMENT_SPREAD",
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "onOperation",
+              "isDeprecated": true,
+              "description": null,
+              "deprecationReason": "Check `locations` field for enum value OPERATION",
+              "args": []
             }
           ],
-          "inputFields": null,
-          "interfaces": [],
           "enumValues": null,
-          "possibleTypes": null
+          "description": "Represents a directive"
         },
         {
-          "kind": "ENUM",
+          "possibleTypes": null,
           "name": "__DirectiveLocation",
-          "description": "A Directive can be adjacent to many parts of the GraphQL language, a __DirectiveLocation describes one such possible adjacencies.",
-          "fields": null,
-          "inputFields": null,
+          "kind": "ENUM",
           "interfaces": null,
+          "inputFields": null,
+          "fields": null,
           "enumValues": [
-            {
-              "name": "QUERY",
-              "description": "Location adjacent to a query operation.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "MUTATION",
-              "description": "Location adjacent to a mutation operation.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "SUBSCRIPTION",
-              "description": "Location adjacent to a subscription operation.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
             {
               "name": "FIELD",
-              "description": "Location adjacent to a field.",
               "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
               "name": "FRAGMENT_DEFINITION",
-              "description": "Location adjacent to a fragment definition.",
               "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
               "name": "FRAGMENT_SPREAD",
-              "description": "Location adjacent to a fragment spread.",
               "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
               "name": "INLINE_FRAGMENT",
-              "description": "Location adjacent to an inline fragment.",
               "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
-              "name": "SCHEMA",
-              "description": "Location adjacent to a schema definition.",
+              "name": "MUTATION",
               "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
-              "name": "SCALAR",
-              "description": "Location adjacent to a scalar definition.",
+              "name": "QUERY",
               "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             },
             {
-              "name": "OBJECT",
-              "description": "Location adjacent to an object definition.",
+              "name": "SUBSCRIPTION",
               "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "FIELD_DEFINITION",
-              "description": "Location adjacent to a field definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ARGUMENT_DEFINITION",
-              "description": "Location adjacent to an argument definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "INTERFACE",
-              "description": "Location adjacent to an interface definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "UNION",
-              "description": "Location adjacent to a union definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ENUM",
-              "description": "Location adjacent to an enum definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "ENUM_VALUE",
-              "description": "Location adjacent to an enum value definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "INPUT_OBJECT",
-              "description": "Location adjacent to an input object definition.",
-              "isDeprecated": false,
-              "deprecationReason": null
-            },
-            {
-              "name": "INPUT_FIELD_DEFINITION",
-              "description": "Location adjacent to an input object field definition.",
-              "isDeprecated": false,
+              "description": null,
               "deprecationReason": null
             }
           ],
-          "possibleTypes": null
+          "description": null
+        },
+        {
+          "possibleTypes": null,
+          "name": "__EnumValue",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "deprecationReason",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "description",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "isDeprecated",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "name",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": null
+        },
+        {
+          "possibleTypes": null,
+          "name": "__Field",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__InputValue",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "args",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "deprecationReason",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "description",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "Boolean",
+                "kind": "SCALAR"
+              },
+              "name": "isDeprecated",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "name",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "__Type",
+                "kind": "OBJECT"
+              },
+              "name": "type",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": null
+        },
+        {
+          "possibleTypes": null,
+          "name": "__InputValue",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "defaultValue",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "description",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "name",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "__Type",
+                "kind": "OBJECT"
+              },
+              "name": "type",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": null
+        },
+        {
+          "possibleTypes": null,
+          "name": "__Schema",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__Directive",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "directives",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "__Type",
+                "kind": "OBJECT"
+              },
+              "name": "mutationType",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "__Type",
+                "kind": "OBJECT"
+              },
+              "name": "queryType",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "__Type",
+                "kind": "OBJECT"
+              },
+              "name": "subscriptionType",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__Type",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "types",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": "Represents a schema"
+        },
+        {
+          "possibleTypes": null,
+          "name": "__Type",
+          "kind": "OBJECT",
+          "interfaces": [],
+          "inputFields": null,
+          "fields": [
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "description",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__EnumValue",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "enumValues",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Boolean",
+                    "kind": "SCALAR"
+                  },
+                  "name": "includeDeprecated",
+                  "description": null,
+                  "defaultValue": "false"
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__Field",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "fields",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": [
+                {
+                  "type": {
+                    "ofType": null,
+                    "name": "Boolean",
+                    "kind": "SCALAR"
+                  },
+                  "name": "includeDeprecated",
+                  "description": null,
+                  "defaultValue": "false"
+                }
+              ]
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__InputValue",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "inputFields",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__Type",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "interfaces",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "kind",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "String",
+                "kind": "SCALAR"
+              },
+              "name": "name",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": null,
+                "name": "__Type",
+                "kind": "OBJECT"
+              },
+              "name": "ofType",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            },
+            {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "__Type",
+                  "kind": "OBJECT"
+                },
+                "name": null,
+                "kind": "LIST"
+              },
+              "name": "possibleTypes",
+              "isDeprecated": false,
+              "description": null,
+              "deprecationReason": null,
+              "args": []
+            }
+          ],
+          "enumValues": null,
+          "description": "Represents scalars, interfaces, object types, unions, enums in the system"
         }
       ],
+      "subscriptionType": null,
+      "queryType": {
+        "name": "RootQueryType"
+      },
+      "mutationType": {
+        "name": "RootMutationType"
+      },
       "directives": [
         {
           "name": "include",
-          "description": "Directs the executor to include this field or fragment only when the `if` argument is true.",
           "locations": [
-            "FIELD",
+            "INLINE_FRAGMENT",
             "FRAGMENT_SPREAD",
-            "INLINE_FRAGMENT"
+            "FIELD"
           ],
+          "description": "Directs the executor to include this field or fragment only when the `if` argument is true.\"",
           "args": [
             {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Boolean",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
               "name": "if",
               "description": "Included when true.",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
               "defaultValue": null
             }
           ]
         },
         {
           "name": "skip",
-          "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
           "locations": [
-            "FIELD",
+            "INLINE_FRAGMENT",
             "FRAGMENT_SPREAD",
-            "INLINE_FRAGMENT"
+            "FIELD"
           ],
+          "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
           "args": [
             {
+              "type": {
+                "ofType": {
+                  "ofType": null,
+                  "name": "Boolean",
+                  "kind": "SCALAR"
+                },
+                "name": null,
+                "kind": "NON_NULL"
+              },
               "name": "if",
               "description": "Skipped when true.",
-              "type": {
-                "kind": "NON_NULL",
-                "name": null,
-                "ofType": {
-                  "kind": "SCALAR",
-                  "name": "Boolean",
-                  "ofType": null
-                }
-              },
               "defaultValue": null
             }
           ]

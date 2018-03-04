@@ -11,6 +11,7 @@
     <dimen name="mainMenuGridMargin">25dp</dimen>
 
     <dimen name="arrowIconSize">27dp</dimen>
+    <dimen name="sendArrowIconSize">40dp</dimen>
 
     <dimen name="userIconSize">30dp</dimen>
 
@@ -20,14 +21,20 @@
     <dimen name="defaultMargin">5dp</dimen>
     <dimen name="defaultContentPadding">5dp</dimen>
     <dimen name="increasedContentPadding">8dp</dimen>
+    <dimen name="bigContentPadding">15dp</dimen>
+
     <dimen name="defaultIconPadding">8dp</dimen>
     <dimen name="defaultHugeTextSize">40sp</dimen>
     <dimen name="defaultLargeTextSize">32sp</dimen>
     <dimen name="defaultMediumTextSize">25sp</dimen>
     <dimen name="intermediateTextSize">20sp</dimen>
     <dimen name="defaultSmallTextSize">17sp</dimen>
+    <dimen name="defaultSmallerTextSize">13sp</dimen>
+    <dimen name="dp">1dp</dimen>
     <dimen name="thinLineWidth">2px</dimen>
     <dimen name="defaultLineWidth">4px</dimen>
 
     <dimen name="increasedMargin">8dp</dimen>
+
+    <dimen name="space">35dp</dimen>
 </resources>

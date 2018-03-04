@@ -18,8 +18,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.greentea.mtspayandroidapplication.util.Account;
+
 public class Launcher extends Activity {
 
+    public static final String TAG = "Launcher";
+    
     private Intent menuIntent;
 
     private static final int AUTHENTICATION_ACTIVITY_REQUEST_CODE = 0xf0;
@@ -29,45 +33,56 @@ public class Launcher extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-/*
-        if (Account.getInstance(this).isLoggedIn()) {
-            int status = Account.getInstance(this).queryPerson();
-            Log.e("Launcher", "status=" + status);
 
-            switch (status) {
+        Account acc = Account.getInstance(this);
+        if (!acc.isLoggedIn()) {
+            launchAuthentication();
+        } else {
 
-                case Account.STATUS_OK:
-                    Log.d("Launcher", "queryPerson STATUS_OK, "
-                            + Account.getInstance().getPerson().firstName() + " "
-                            + Account.getInstance().getPerson().lastName());
-                    launchMenu();
-                    break;
+            launchMenu();
+        }
 
-                case Account.STATUS_RECOVERED:
-                    Log.d("Launcher", "queryPerson STATUS_RECOVERED, "
-                            + Account.getInstance().getPerson().firstName() + " "
-                            + Account.getInstance().getPerson().lastName());
-                    launchMenu();
-                    break;
 
-                case Account.STATUS_APOLLO_EXCEPTION:
-                    Log.d("Launcher", "queryPerson STATUS_APOLLO_EXCEPTION, "
-                            + Account.getInstance().getException());
-                    AppHelper.showExceptionAlertDialog(Account.getInstance().getException(), this);
-                    break;
 
-                case Account.STATUS_NO_ACCOUNT_FOUND:
-                    Log.d("Launcher", "queryPerson STATUS_NO_ACCOUNT_FOUND, token="
-                            + Account.getInstance().getToken());
-                    Log.e("Launcher", "Cleaning Account token...");
-                    Account.getInstance().setToken("null");
-                    Account.getInstance().saveToken();
-                    launchAuthentication();
-            }
-        } else launchAuthentication();
-        Log.wtf("Launcher", "onCreate was finished!?");
-        */
-launchMenu();
+//        if (Account.getInstance(this).isLoggedIn()) {
+//            Map<String, Object> map = Account.getInstance(this).login();
+//            Log.e(TAG, "map=" + map);
+//
+//            switch (map) {
+//
+//                case Account.STATUS_OK:
+//                    Log.d(TAG, "queryPerson STATUS_OK, "
+//                            + Account.getInstance().getPerson().firstName() + " "
+//                            + Account.getInstance().getPerson().lastName());
+//                    launchMenu();
+//                    break;
+//
+//                case Account.STATUS_RECOVERED:
+//                    Log.d(TAG, "queryPerson STATUS_RECOVERED, "
+//                            + Account.getInstance().getPerson().firstName() + " "
+//                            + Account.getInstance().getPerson().lastName());
+//                    launchMenu();
+//                    break;
+//
+//                case Account.STATUS_APOLLO_EXCEPTION:
+//                    Log.d(TAG, "queryPerson STATUS_APOLLO_EXCEPTION, "
+//                            + Account.getInstance().getException());
+//                    AppHelper.showExceptionAlertDialog(Account.getInstance().getException(), this);
+//                    break;
+//
+//                case Account.STATUS_NO_ACCOUNT_FOUND:
+//                    Log.d(TAG, "queryPerson STATUS_NO_ACCOUNT_FOUND, token="
+//                            + Account.getInstance().getToken());
+//                    Log.e(TAG, "Cleaning Account token...");
+//                    Account.getInstance().setToken("null");
+//                    Account.getInstance().saveToken();
+//                    launchAuthentication();
+//            }
+//        } else {
+//            Log.i(TAG, "Already logged in with token=" + Account.getInstance().getToken());
+//            launchAuthentication();
+//        }
+//        Log.wtf(TAG, "onCreate was finished!?");
     }
 
     @Override
@@ -86,12 +101,12 @@ launchMenu();
                 if (resultCode == MenuActivity.KEEP_SESSION) {
                     finish();
                 } else {
-                    //logout();
+                    Account.getInstance(this).deleteToken();
                     launchAuthentication();
                 }
                 break;
             default:
-                Log.e("Launcher", "ERROR: DEFAULT ACTIVITY RESULT! requestCode=" + requestCode + ", resultCode=" + resultCode + ", data=" + data);
+                Log.e(TAG, "ERROR: DEFAULT ACTIVITY RESULT! requestCode=" + requestCode + ", resultCode=" + resultCode + ", data=" + data);
                 break;
         }
     }

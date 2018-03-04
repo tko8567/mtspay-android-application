@@ -8,6 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="actionBarStyle">@style/AppTheme.ActionBarStyle</item>
         <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:editTextStyle">@style/EditTextStyle</item>
+    </style>
+
+    <style name="DefaultEditTextStyle">
+
+
+
     </style>
 
     <style name="AppTheme.ActionBarStyle" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -23,7 +30,8 @@
     </style>
 
     <style name="EditTextStyle" parent="android:Widget.EditText">
-        <item name="android:textColor">#ffffff</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:background">@drawable/underline</item>
     </style>
 
     <style name="PresentationalText">
@@ -33,6 +41,11 @@
 
     <style name="StandardText">
         <item name="android:textSize">@dimen/intermediateTextSize</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="MessageText">
+        <item name="android:textSize">@dimen/defaultSmallTextSize</item>
         <item name="android:textColor">@android:color/black</item>
     </style>
 

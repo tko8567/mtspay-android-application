@@ -10,12 +10,16 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import com.greentea.mtspayandroidapplication.util.Account;
+import com.greentea.mtspayandroidapplication.util.AppHelper;
+
+import java.util.Map;
 
 public class AuthenticationActivity extends AppCompatActivity {
 
-    protected static int WTF = 0x0;
-
+    private static final String TAG = "AuthenticationActivity";
 
     public static final int RESULT_LOGGED_IN = 0x10;
     public static final int RESULT_LOG_IN_FAILED = 0x11;
@@ -50,6 +54,8 @@ public class AuthenticationActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
 
+            v.setEnabled(false);
+
             String login = mLoginEntry.getText().toString();
             String password = mPasswordEntry.getText().toString();
 
@@ -63,40 +69,42 @@ public class AuthenticationActivity extends AppCompatActivity {
             if (ni != null) {
                 if (ni.isConnected()) {
                     // TODO: 28.11.2017 perform queryPerson here
-                    Account.getInstance(AuthenticationActivity.this).setToken(login);
-                    int status = Account.getInstance().queryPerson();
-                    Log.e("AuthenticationActivity", "status=" + status);
+                    Map<String, Object> map = Account.getInstance(AuthenticationActivity.this).login(login, password);
 
-                    switch (status) {
-
-                        case Account.STATUS_OK:
-                            Log.d("AuthenticationActivity", "queryPerson STATUS_OK, "
-                                    + Account.getInstance().getPerson().firstName() + " "
-                                    + Account.getInstance().getPerson().lastName());
+                    Account.ResponseStatus i = (Account.ResponseStatus) map.get(Account.STATUS);
+                    switch (i) {
+                        case SUCCESS:
                             Account.getInstance().saveToken();
                             setResult(RESULT_LOGGED_IN);
+                            v.setEnabled(true);
                             finish();
                             break;
 
-                        case Account.STATUS_RECOVERED:
-                            Log.wtf("AuthenticationActivity", "queryPerson RECOVERED ACCOUNT IN AuthenticationActivity!");
-                            Log.d("AuthenticationActivity", "Account info: "
-                                    + "firstName=" + Account.getInstance().getPerson().firstName() + ", "
-                                    + "lastName=" + Account.getInstance().getPerson().lastName() + ", "
-                                    + "id/token=" + Account.getInstance().getPerson().id());
-                            setResult(RESULT_LOGGED_IN);
-                            finish();
-                            break;
-
-                        case Account.STATUS_NO_ACCOUNT_FOUND:
-                            Log.i("AuthenticationActivity", "queryPerson STATUS_NO_ACCOUNT_FOUND");
+                        case WRONG_PAIR:
+                            Log.i(TAG, "WRONG_PAIR");
                             showUnauthorizedDialog();
                             break;
 
+                        case FAILURE:
+                            Log.wtf(TAG, "FAILURE SECTION?: " + map.get(Account.EXCEPTION).toString());
+                            break;
+
+                        case UNKNOWN_FAILURE:
+                            Log.wtf(TAG, "Unknown failure in login: " + map.get(Account.EXCEPTION).toString());
+                            break;
+
+                        case HTTP_ERROR:
+
+                            break;
+
                         default:
-                            Log.wtf("AuthenticationActivity", "Default case after queryPerson!");
-                            Log.d("AuthenticationActivity", "status=" + status);
+                            AppHelper.showExceptionAlertDialog(
+                                    (Exception) map.get(Account.EXCEPTION),
+                                    AuthenticationActivity.this
+                            );
+                            break;
                     }
+
                     /*
 
             int status = Account.getInstance(this).queryPerson();
@@ -137,9 +145,12 @@ public class AuthenticationActivity extends AppCompatActivity {
 
                 } else {
                     // TODO: 28.11.2017 no connection (e.g. wifi with no ap accessed)
+                    Toast.makeText(AuthenticationActivity.this, "Check internet connection!", Toast.LENGTH_LONG).show();
                 }
             } else {
                 // TODO: 28.11.2017 no active network - wifi and data transfer are offline
+                Toast.makeText(AuthenticationActivity.this, "Enable network to perform this action", Toast.LENGTH_LONG).show();
+
             }
             /*
             ConnectivityManager cm = (ConnectivityManager) getApplicationContext().getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -208,6 +219,7 @@ public class AuthenticationActivity extends AppCompatActivity {
                 }
                 networkUnavailableDialog.show();
             }*/
+            v.setEnabled(true);
         }
     };
 

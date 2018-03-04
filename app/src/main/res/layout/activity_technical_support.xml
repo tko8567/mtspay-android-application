@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/support_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/increasedContentPadding"
+        android:gravity="center"
+        android:background="#10FF0000"
+        android:text="Татьяна"
+        style="@style/StandardText"/>
+
+    <ScrollView
+        android:id="@+id/scroll_layout_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textEditorLayout"
+        android:layout_below="@+id/support_name"
+
+        android:padding="@dimen/bigContentPadding">
+
+        <LinearLayout
+            android:id="@+id/message_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <!-- Content sample start -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space"
+                android:layout_marginBottom="@dimen/bigContentPadding"
+                android:padding="@dimen/increasedContentPadding"
+                android:background="@drawable/grey_frame"
+                android:text="Добрый вечер, меня зовут Татьяна. Могу ли я чем-нибудь помочь Вам?"
+                style="@style/MessageText"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/space"
+                android:layout_marginBottom="@dimen/bigContentPadding"
+                android:padding="@dimen/increasedContentPadding"
+                android:background="@drawable/red_frame"
+                android:text="Добрый вечер, Татьяна, у меня есть несколько вопросов касательно сканирования QR-кодов"
+                style="@style/MessageText"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/space"
+                android:layout_marginBottom="@dimen/bigContentPadding"
+                android:padding="@dimen/increasedContentPadding"
+                android:background="@drawable/grey_frame"
+                android:text="Конечно, задавайте. Описывайте проблему максимально подробно, чтобы мы имели возможность быстро отреагировать на запрос"
+                style="@style/MessageText"/>
+
+            <!-- Content sample end -->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/textEditorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:padding="@dimen/defaultContentPadding"
+        android:background="#10FF0000">
+
+        <EditText
+            android:id="@+id/message_editor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/send_button"
+            android:padding="@dimen/increasedContentPadding"
+            android:text="Какого хрена оно не работает?"
+            style="@style/MessageText"/>
+
+        <ImageView
+            android:id="@+id/send_button"
+            android:padding="@dimen/increasedContentPadding"
+            android:layout_width="@dimen/sendArrowIconSize"
+            android:layout_height="@dimen/sendArrowIconSize"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/send_arrow"
+            android:onClick="onSendClick"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

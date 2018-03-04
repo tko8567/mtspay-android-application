@@ -2,18 +2,16 @@ package com.greentea.mtspayandroidapplication;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.*;
-import android.widget.ImageView;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import apollo.FindPersonByIdQuery.Transaction;
+
 import com.greentea.mtspayandroidapplication.util.Account;
 
-import java.text.DecimalFormat;
+import fragment.PersonData.Transaction;
 
 public class TransactionsActivity extends AppCompatActivity {
 
@@ -33,10 +31,10 @@ public class TransactionsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(false);
 
-        Account.getInstance().getPerson().transactions().forEach(transaction -> {
+        for (Transaction transaction : Account.getInstance().getPerson().transactions()) {
             mTransactionsContainer.addView(createViewForTransaction(transaction));
             mTransactionsContainer.invalidate();
-        });
+        }
 
     }
 
@@ -52,7 +50,7 @@ public class TransactionsActivity extends AppCompatActivity {
     }
 
     private View createViewForTransaction(Transaction transaction) {
-
+/*
         DecimalFormat format = new DecimalFormat(getString(R.string.moneyFormat));
 
         String name;
@@ -179,5 +177,7 @@ public class TransactionsActivity extends AppCompatActivity {
                         + ((description != null) ? getString(R.string.description) + description : "")
         );
         mTransactionInfoDialog.show();
+        */
+return null;
     }
 }
